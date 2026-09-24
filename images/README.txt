@@ -5,8 +5,10 @@ Local photos are used across the website (photo-001.jpg … photo-096.jpg).
 
 SOURCE
 ------
-Original WhatsApp export folder:
-  images/WhatsApp Unknown 2026-08-04 at 22.40.17 (1)/
+Original WhatsApp exports have been removed. The clean web copies below are retained.
+
+Additional safari wildlife photos:
+  images/wildlife/ (see README.md and sources.json for separate credits)
 
 Clean web copies (use these in HTML):
   images/photo-001.jpg … photo-096.jpg
