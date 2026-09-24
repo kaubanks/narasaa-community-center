@@ -124,13 +124,18 @@
     closeMenu();
   });
 
+  const hero = document.querySelector("main > .hero");
   const onScroll = () => {
     const y = window.scrollY || document.documentElement.scrollTop;
-    if (header) header.classList.toggle("is-scrolled", y > 8);
+    if (header) {
+      const overHero = hero && hero.getBoundingClientRect().bottom > header.offsetHeight;
+      header.classList.toggle("is-scrolled", !overHero && y > 8);
+    }
     if (backToTop) backToTop.classList.toggle("is-visible", y > 480);
   };
 
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
   onScroll();
 
   if (backToTop) {

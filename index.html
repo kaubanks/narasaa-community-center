@@ -22,7 +22,7 @@
   <link rel="icon" type="image/png" href="assets/logo-narasaa.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -46,7 +46,7 @@
   }
   </script>
 </head>
-<body>
+<body class="home-page">
   <a class="skip-link" href="#main">Skip to main content</a>
 
     <header class="site-header">
@@ -91,7 +91,7 @@
                     <li><a href="education.html#help">How You Can Help</a></li>
                     <li><a href="education.html">All Education</a></li>
                   </ul>
-                  <a class="nav__mega-cta" href="contact.html#donate">Support education â†’</a>
+                  <a class="nav__mega-cta" href="contact.html#donate">Support education →</a>
                 </div>
               </div>
             </div>
@@ -120,7 +120,7 @@
                     <li><a href="safari.html">Safari &amp; Adventures</a></li>
                     <li><a href="contact.html">Plan With Us</a></li>
                   </ul>
-                  <a class="nav__mega-cta" href="cultural-tour.html#booking">Request booking â†’</a>
+                  <a class="nav__mega-cta" href="cultural-tour.html#booking">Request booking →</a>
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@
                     <li><a href="cultural-tour.html">Add Cultural Tour</a></li>
                     <li><a href="contact.html">Contact Narasaa</a></li>
                   </ul>
-                  <a class="nav__mega-cta" href="safari.html#book">Book with Simba â†’</a>
+                  <a class="nav__mega-cta" href="safari.html#book">Book with Simba →</a>
                 </div>
               </div>
             </div>
@@ -172,23 +172,25 @@
   </header>
 
   <main id="main">
-    <!-- PHOTO STRATEGY: Hero â€” welcoming community/education moment (children or village gathering). Replace with authentic Kimokouwa photo. -->
-    <section class="hero" aria-label="Homepage hero">
+    <section class="hero hero--slideshow" data-hero-slider aria-label="Life at Narasaa" aria-roledescription="carousel">
       <div class="hero__media">
-        <img
-          src="images/photo-027.jpg"
-          alt="Children gathered outdoors in a rural community setting, representing hope through education"
-          width="1800"
-          height="1200"
-          fetchpriority="high">
+        <div class="hero__slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 3" aria-hidden="false">
+          <img src="images/photo-027.jpg" alt="Children and adults learning together in the community classroom" width="1600" height="1200" fetchpriority="high">
+        </div>
+        <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
+          <img src="images/photo-015.jpg" alt="Maasai community members gathering outdoors in Kimokouwa" width="1600" height="375">
+        </div>
+        <div class="hero__slide" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
+          <img src="images/photo-050.jpg" alt="Young students watching a lesson at the community center" width="1600" height="1200">
+        </div>
       </div>
       <div class="hero__overlay" aria-hidden="true"></div>
       <div class="hero__content">
-        <p class="hero__eyebrow">Kimokouwa Village Â· Longido Â· Arusha</p>
+        <p class="hero__eyebrow">Kimokouwa Village · Longido · Arusha</p>
         <h1>Opportunity grows when a community stands together.</h1>
         <p class="hero__text">
           Narasaa Community Center partners with families in Kimokouwa to strengthen education,
-          clean water access, womenâ€™s leadership, and Maasai cultural prideâ€”while welcoming visitors
+          clean water access, women’s leadership, and Maasai cultural pride—while welcoming visitors
           who want to travel with purpose.
         </p>
         <div class="btn-group">
@@ -196,6 +198,16 @@
           <a class="btn btn--outline" href="cultural-tour.html">Visit Kimokouwa</a>
           <a class="btn btn--gold" href="safari.html">Safari with Impact</a>
         </div>
+      </div>
+      <div class="hero__controls" aria-label="Slideshow controls" hidden>
+        <button type="button" data-hero-prev aria-label="Previous image">&#8592;</button>
+        <div class="hero__dots" aria-label="Choose an image">
+          <button type="button" data-hero-dot="0" aria-label="Show classroom gathering" aria-pressed="true"><span></span></button>
+          <button type="button" data-hero-dot="1" aria-label="Show community gathering" aria-pressed="false"><span></span></button>
+          <button type="button" data-hero-dot="2" aria-label="Show students learning" aria-pressed="false"><span></span></button>
+        </div>
+        <button type="button" data-hero-next aria-label="Next image">&#8594;</button>
+        <button class="hero__pause" type="button" data-hero-pause>Pause</button>
       </div>
     </section>
 
@@ -206,7 +218,7 @@
           <h2>Why Narasaa exists</h2>
           <p class="lead">
             We exist so children can learn, families can access safer water, women can lead with
-            confidence, and Maasai culture can be shared with dignityâ€”not extracted for tourism.
+            confidence, and Maasai culture can be shared with dignity—not extracted for tourism.
           </p>
           <p>
             Based in Kimokouwa Village, Longido District, we work alongside local leaders, teachers,
@@ -250,7 +262,7 @@
           </p>
           <p>
             From early childhood learning to adult education, water security, cultural tourism, and
-            partnerships that bring visitors into meaningful exchangeâ€”we invite you to walk with us.
+            partnerships that bring visitors into meaningful exchange—we invite you to walk with us.
           </p>
           <div class="btn-group" style="margin-top:1.25rem">
             <a class="btn btn--outline-dark" href="about.html">Read our story</a>
@@ -265,7 +277,7 @@
         <div class="section__header section__header--center reveal">
           <p class="section__eyebrow">What We Do</p>
           <h2>Programs that strengthen daily life</h2>
-          <p>Each program responds to needs named by the communityâ€”and is designed for lasting impact.</p>
+          <p>Each program responds to needs named by the community—and is designed for lasting impact.</p>
         </div>
         <div class="grid-3">
           <article class="card reveal">
@@ -275,7 +287,7 @@
             <div class="card__body">
               <h3>Education</h3>
               <p>Baby class through primary support, plus adult learning for women and men.</p>
-              <a class="card__link" href="education.html">Explore education â†’</a>
+              <a class="card__link" href="education.html">Explore education →</a>
             </div>
           </article>
           <article class="card reveal reveal-delay-1">
@@ -285,7 +297,7 @@
             <div class="card__body">
               <h3>Clean Water</h3>
               <p>Advancing a borehole project for healthier families, livestock, and learning days.</p>
-              <a class="card__link" href="borehole.html">Support water â†’</a>
+              <a class="card__link" href="borehole.html">Support water →</a>
             </div>
           </article>
           <article class="card reveal reveal-delay-2">
@@ -293,9 +305,9 @@
               <img src="images/photo-087.jpg" alt="Women from the Kimokouwa community" width="900" height="620" loading="lazy">
             </div>
             <div class="card__body">
-              <h3>Womenâ€™s Empowerment</h3>
+              <h3>Women’s Empowerment</h3>
               <p>Skills, literacy, leadership, and income pathways that lift whole households.</p>
-              <a class="card__link" href="education.html#womens-education">Learn more â†’</a>
+              <a class="card__link" href="education.html#womens-education">Learn more →</a>
             </div>
           </article>
           <article class="card reveal">
@@ -305,7 +317,7 @@
             <div class="card__body">
               <h3>Community Development</h3>
               <p>Local leadership, shared planning, and projects that strengthen village life.</p>
-              <a class="card__link" href="about.html#impact">See our approach â†’</a>
+              <a class="card__link" href="about.html#impact">See our approach →</a>
             </div>
           </article>
           <article class="card reveal reveal-delay-1">
@@ -315,7 +327,7 @@
             <div class="card__body">
               <h3>Culture</h3>
               <p>Preserving Maasai knowledge, song, craft, and storytelling for the next generation.</p>
-              <a class="card__link" href="cultural-tour.html">Experience culture â†’</a>
+              <a class="card__link" href="cultural-tour.html">Experience culture →</a>
             </div>
           </article>
           <article class="card reveal reveal-delay-2">
@@ -325,7 +337,7 @@
             <div class="card__body">
               <h3>Sustainable Tourism</h3>
               <p>Ethical cultural visits and safari partnerships that return value to the community.</p>
-              <a class="card__link" href="safari.html">Plan a visit â†’</a>
+              <a class="card__link" href="safari.html">Plan a visit →</a>
             </div>
           </article>
         </div>
@@ -375,8 +387,8 @@
                   <img src="images/photo-045.jpg" alt="Child focused on learning during class time" width="900" height="700" loading="lazy">
                 </div>
                 <div class="story-card__body">
-                  <p class="quote">â€œWhen school feels close and welcoming, children arrive ready to learnâ€”and parents begin to dream bigger.â€</p>
-                  <p class="quote-attr">Community education focus Â· Children &amp; families</p>
+                  <p class="quote">“When school feels close and welcoming, children arrive ready to learn—and parents begin to dream bigger.”</p>
+                  <p class="quote-attr">Community education focus · Children &amp; families</p>
                 </div>
               </article>
             </div>
@@ -386,7 +398,7 @@
                   <img src="images/photo-023.jpg" alt="Teacher guiding students in a bright classroom" width="900" height="700" loading="lazy">
                 </div>
                 <div class="story-card__body">
-                  <p class="quote">â€œTeachers need tools, training, and community trust. When those come together, classrooms change.â€</p>
+                  <p class="quote">“Teachers need tools, training, and community trust. When those come together, classrooms change.”</p>
                   <p class="quote-attr">Teachers of Kimokouwa</p>
                 </div>
               </article>
@@ -397,15 +409,15 @@
                   <img src="images/photo-036.jpg" alt="Woman standing outdoors with quiet confidence" width="900" height="700" loading="lazy">
                 </div>
                 <div class="story-card__body">
-                  <p class="quote">â€œAdult learning gives women more than literacyâ€”it opens doors to leadership, income, and voice.â€</p>
-                  <p class="quote-attr">Womenâ€™s empowerment circle</p>
+                  <p class="quote">“Adult learning gives women more than literacy—it opens doors to leadership, income, and voice.”</p>
+                  <p class="quote-attr">Women’s empowerment circle</p>
                 </div>
               </article>
             </div>
           </div>
           <div class="slider__controls">
-            <button class="slider__btn" type="button" data-slider-prev aria-label="Previous story">â€¹</button>
-            <button class="slider__btn" type="button" data-slider-next aria-label="Next story">â€º</button>
+            <button class="slider__btn" type="button" data-slider-prev aria-label="Previous story">‹</button>
+            <button class="slider__btn" type="button" data-slider-next aria-label="Next story">›</button>
           </div>
         </div>
       </div>
@@ -460,8 +472,8 @@
             <div class="partner__badge" aria-hidden="true"></div>
             <div>
               <h3>Simba Adventures</h3>
-              <p>Professional safari operations across northern Tanzaniaâ€”connected to community impact through Narasaa.</p>
-              <p style="margin-top:0.65rem"><a href="safari.html">Explore safari partnership â†’</a></p>
+              <p>Professional safari operations across northern Tanzania—connected to community impact through Narasaa.</p>
+              <p style="margin-top:0.65rem"><a href="safari.html">Explore safari partnership →</a></p>
             </div>
           </div>
         </div>
@@ -472,7 +484,7 @@
       <div class="container">
         <div class="cta-band reveal" id="get-involved">
           <div>
-            <h2>Your support becomes someoneâ€™s opportunity.</h2>
+            <h2>Your support becomes someone’s opportunity.</h2>
             <p>Donate to education and water. Volunteer your skills. Visit Kimokouwa with respect. Book a safari that gives back.</p>
           </div>
           <div class="cta-band__actions">
@@ -493,7 +505,7 @@
             <p>Kimokouwa Village, Longido District, Arusha Region, Tanzania.</p>
           </div>
         </div>
-        <p>Education Â· Clean Water Â· Womenâ€™s Empowerment Â· Culture Â· Responsible Tourism</p>
+        <p>Education · Clean Water · Women’s Empowerment · Culture · Responsible Tourism</p>
         <div class="socials" aria-label="Social media">
           <a href="contact.html" aria-label="Facebook">Fb</a>
           <a href="contact.html" aria-label="Instagram">Ig</a>
@@ -529,7 +541,7 @@
       </div>
     </div>
     <div class="container footer-bottom">
-      <p>Â© <span data-year></span> Narasaa Community Center. All rights reserved.</p>
+      <p>© <span data-year></span> Narasaa Community Center. All rights reserved.</p>
       <p>Built for community impact in Tanzania.</p>
     </div>
   </footer>
@@ -539,11 +551,12 @@
     <img src="" alt="">
   </div>
 
-  <button class="back-to-top" type="button" aria-label="Back to top">â†‘</button>
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
 
   <script src="js/navigation.js" defer></script>
   <script src="js/counter.js" defer></script>
   <script src="js/slider.js" defer></script>
+  <script src="js/hero.js" defer></script>
   <script src="js/gallery.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>

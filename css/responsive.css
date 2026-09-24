@@ -67,9 +67,9 @@
     padding: calc(var(--header-h) + 0.75rem) 0 1.5rem;
     transform: translateX(104%);
     opacity: 1;
-    visibility: visible;
+    visibility: hidden;
     pointer-events: none;
-    transition: transform var(--nav-ease);
+    transition: transform var(--nav-ease), visibility var(--nav-ease);
     z-index: 999;
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -79,10 +79,12 @@
 
   .nav__panel.is-open {
     transform: translateX(0);
+    visibility: visible;
     pointer-events: auto;
   }
 
   .nav__menu {
+    width: 100%;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
@@ -108,6 +110,13 @@
     font-size: 1.05rem;
     letter-spacing: 0.05em;
     font-weight: 600;
+    color: var(--ink-700);
+  }
+
+  .nav__link:hover,
+  .nav__link:focus-visible,
+  .nav__link.is-active {
+    color: var(--terracotta-600);
   }
 
   .nav__link::after {
@@ -161,8 +170,8 @@
     grid-column: 1 / -1;
     transform: none;
     opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+    visibility: hidden;
+    pointer-events: none;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.35s ease;
@@ -175,7 +184,15 @@
   }
 
   .nav__item.is-open > .nav__mega {
-    max-height: 720px;
+    max-height: none;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav__item--mega-wide .nav__mega {
+    width: 100%;
+    max-width: none;
+    transform: none;
   }
 
   .nav__mega {
@@ -239,7 +256,14 @@
   .story-card,
   .cta-band,
   .form-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .split > *,
+  .form-row > *,
+  .footer-grid > *,
+  .connect-card__header > * {
+    min-width: 0;
   }
 
   .split--reverse > :first-child,
@@ -283,7 +307,7 @@
   .gallery-grid,
   .footer-grid,
   .connect-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .stats {
@@ -316,6 +340,31 @@
   .story-card__media {
     min-height: 220px;
   }
+}
+
+@media (max-width: 1024px) {
+  .hero.hero--slideshow { min-height: max(740px, 94svh); }
+  .hero--slideshow .hero__content { width: calc(100% - 3rem); }
+  .hero__controls { right: 1.5rem; }
+}
+
+@media (max-width: 640px) {
+  .hero.hero--slideshow { min-height: 100svh; }
+  .hero--slideshow .hero__content {
+    width: calc(100% - 2.5rem);
+    padding-top: calc(var(--header-h) + 3rem);
+    padding-bottom: 7rem;
+  }
+  .hero--slideshow h1 { font-size: clamp(2.3rem, 8.8vw, 3.3rem); }
+  .hero--slideshow .hero__text { font-size: 1rem; }
+  .hero__controls { left: 1.25rem; right: auto; bottom: 1.5rem; gap: 0.25rem; }
+}
+
+@media (max-width: 380px) {
+  .hero__controls { left: 1rem; gap: 0; }
+  .hero__controls .hero__pause { padding-inline: 0.65rem; }
+  .connect-card__header { flex-direction: column; }
+  .cta-band__actions .btn { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
